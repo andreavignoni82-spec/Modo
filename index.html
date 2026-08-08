@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>MODO — Family Prototype</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <div class="brand">MODO</div>
+        <div class="tagline">Digital Balance for Families</div>
+      </div>
+      <button id="parentBtn" class="ghost">Genitore</button>
+    </header>
+
+    <section id="homeView" class="view active">
+      <div class="hero">
+        <p class="eyebrow">CHI USA QUESTO DISPOSITIVO?</p>
+        <h1>Scegli il tuo profilo</h1>
+        <p>Il budget segue la persona, non il telefono.</p>
+      </div>
+      <div id="profiles" class="profiles"></div>
+      <div class="family-card">
+        <div>
+          <strong>Modalità famiglia</strong>
+          <span>Contenuto condiviso, nessun consumo personale.</span>
+        </div>
+        <button id="familyModeBtn">Avvia</button>
+      </div>
+    </section>
+
+    <section id="sessionView" class="view">
+      <button id="backBtn" class="back">‹ Cambia profilo</button>
+      <div class="session-head">
+        <div id="avatar" class="avatar large"></div>
+        <div>
+          <p class="eyebrow">SESSIONE ATTIVA</p>
+          <h1 id="sessionName"></h1>
+        </div>
+      </div>
+
+      <div class="budget-card">
+        <div class="budget-row">
+          <span>Tempo disponibile oggi</span>
+          <strong id="remainingText"></strong>
+        </div>
+        <div class="progress"><div id="progressBar"></div></div>
+        <div class="budget-row small">
+          <span id="usedText"></span>
+          <span id="totalText"></span>
+        </div>
+      </div>
+
+      <div class="quick-actions">
+        <button data-min="5">+5 min</button>
+        <button data-min="10">+10 min</button>
+        <button data-min="15">+15 min</button>
+      </div>
+
+      <div class="activity-card">
+        <h2>Attività della sessione</h2>
+        <div class="activity-grid">
+          <button class="activity" data-weight="1" data-label="Video">
+            <span>▶️</span><strong>Video</strong><small>peso 1×</small>
+          </button>
+          <button class="activity" data-weight="1.5" data-label="Shorts">
+            <span>⚡</span><strong>Shorts</strong><small>peso 1,5×</small>
+          </button>
+          <button class="activity" data-weight="1" data-label="Gaming">
+            <span>🎮</span><strong>Gaming</strong><small>peso 1×</small>
+          </button>
+          <button class="activity" data-weight="0" data-label="Scuola">
+            <span>📚</span><strong>Scuola</strong><small>non consuma</small>
+          </button>
+        </div>
+      </div>
+
+      <div class="session-actions">
+        <button id="startTimerBtn" class="primary">Avvia sessione reale</button>
+        <button id="endSessionBtn" class="danger">Termina sessione</button>
+      </div>
+      <p id="timerStatus" class="timer-status"></p>
+    </section>
+
+    <section id="parentView" class="view">
+      <button id="parentBackBtn" class="back">‹ Home</button>
+      <div class="hero">
+        <p class="eyebrow">DASHBOARD GENITORE</p>
+        <h1>Oggi in famiglia</h1>
+        <p>Prototipo locale: i dati restano su questo dispositivo.</p>
+      </div>
+      <div id="parentCards" class="parent-cards"></div>
+      <button id="resetBtn" class="danger outline">Azzera dati demo</button>
+    </section>
+
+    <div id="modal" class="modal hidden">
+      <div class="modal-card">
+        <h2 id="modalTitle"></h2>
+        <p id="modalText"></p>
+        <div class="modal-actions">
+          <button id="modalCancel" class="ghost">Annulla</button>
+          <button id="modalConfirm" class="primary">Conferma</button>
+        </div>
+      </div>
+    </div>
+  </main>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+:root{
+  --bg:#f5f6f8; --card:#fff; --text:#121316; --muted:#70757d; --line:#e6e8ec;
+  --accent:#111; --soft:#eef0f3; --danger:#a51d2d;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif}
+button{font:inherit}
+.app{max-width:760px;margin:0 auto;min-height:100vh;padding:calc(env(safe-area-inset-top) + 18px) 18px calc(env(safe-area-inset-bottom) + 24px)}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}
+.brand{font-weight:900;letter-spacing:.18em;font-size:24px}
+.tagline{color:var(--muted);font-size:12px;margin-top:3px}
+.ghost,.back{border:0;background:var(--soft);padding:10px 14px;border-radius:14px}
+.view{display:none}.view.active{display:block}
+.hero{margin:12px 0 24px}.hero h1{font-size:34px;line-height:1.05;margin:6px 0 10px}.hero p{color:var(--muted);margin:0}
+.eyebrow{font-size:11px!important;font-weight:800;letter-spacing:.12em;color:var(--muted)!important}
+.profiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.profile-card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px 10px;text-align:center;box-shadow:0 5px 20px rgba(0,0,0,.035)}
+.avatar{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:#eceef1;margin:0 auto 10px;font-size:30px}
+.avatar.large{width:76px;height:76px;margin:0}
+.profile-card strong{display:block}.profile-card small{display:block;color:var(--muted);margin-top:5px}
+.family-card,.budget-card,.activity-card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px;margin-top:16px}
+.family-card{display:flex;justify-content:space-between;gap:14px;align-items:center}.family-card span{display:block;color:var(--muted);font-size:13px;margin-top:4px}.family-card button{border:0;background:#111;color:#fff;padding:10px 16px;border-radius:14px}
+.session-head{display:flex;align-items:center;gap:16px;margin:24px 0}
+.session-head h1{margin:2px 0;font-size:32px}
+.budget-row{display:flex;justify-content:space-between;gap:12px}.budget-row.small{font-size:12px;color:var(--muted)}
+.progress{height:12px;background:#eceef1;border-radius:999px;overflow:hidden;margin:15px 0}.progress>div{height:100%;background:#111;width:0%;transition:.25s}
+.quick-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}.quick-actions button{border:1px solid var(--line);background:#fff;padding:13px;border-radius:14px}
+.activity-card h2{margin-top:0}.activity-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.activity{border:1px solid var(--line);background:#fafafa;padding:16px;border-radius:16px;text-align:left}.activity.selected{outline:2px solid #111;background:#fff}.activity span,.activity strong,.activity small{display:block}.activity span{font-size:24px;margin-bottom:8px}.activity small{color:var(--muted);margin-top:4px}
+.session-actions{display:grid;gap:10px;margin-top:16px}.primary,.danger{border:0;border-radius:16px;padding:15px;font-weight:750}.primary{background:#111;color:#fff}.danger{background:#f7e9eb;color:var(--danger)}.danger.outline{margin-top:20px;width:100%}
+.timer-status{text-align:center;color:var(--muted);font-variant-numeric:tabular-nums}
+.parent-cards{display:grid;gap:12px}.parent-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px}.parent-card-head{display:flex;justify-content:space-between;align-items:center}.parent-card h3{margin:0}.metric{font-size:26px;font-weight:800;margin-top:12px}.muted{color:var(--muted);font-size:13px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.35);display:grid;place-items:end center;padding:18px}.modal.hidden{display:none}.modal-card{background:white;border-radius:24px;padding:22px;max-width:520px;width:100%;margin-bottom:max(12px, env(safe-area-inset-bottom))}.modal-card h2{margin-top:0}.modal-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+@media(max-width:520px){.profiles{grid-template-columns:1fr}.profile-card{display:grid;grid-template-columns:64px 1fr;text-align:left;align-items:center}.profile-card .avatar{grid-row:1/3;margin:0}.hero h1{font-size:30px}}
